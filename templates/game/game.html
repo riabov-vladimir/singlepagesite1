@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <title>RIABOW.com</title>
+    <style>
+      body {
+        background: #000;
+        color: #1DFF22;
+        font-family: 'VT323', monospace;
+        font-size: 36px;
+      }
+      h1 {
+        padding: 1px 1px 1px 1px;
+        text-align: right;
+      }
+      .wrapper {
+        margin: 90px auto;
+        text-align: left;
+<!--        align-items: left;-->
+        width: 100%;
+        position: relative;
+      }
+      .button {
+        padding: 5px 10px 1px 5px;
+        margin: 10px 1px 2px 2px;
+<!--        color: #1DFF22;-->
+        text-transform: uppercase;
+        text-align: right;
+        position: relative;
+        width: 200px;
+        height: 50px;
+        text-decoration: none;
+        display: inline-block;
+        border: 3px solid;
+      }
+      .button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        -webkit-transform: scaleY(.1);
+        transform: scaleY(.1);
+        transition: all .4s
+      }
+      .button:hover {
+        color: #000;
+      }
+      .button:hover::before {
+        opacity: 1;
+        background-color: #1DFF22;
+        -webkit-transform: scaleY(1);
+        transform: scaleY(1);
+        transition: -webkit-transform .6s cubic-bezier(.08, .35, .13, 1.02), opacity .4s;
+        transition: transform .6s cubic-bezier(.08, .35, .13, 1.02), opacity
+      }
+      .frame-div {
+        margin: -475px 1px 1px 401px;
+        padding: 20px 30px 220px 30px;
+        border: 3px dashed #1DFF22;
+        text-align: center;
+        font-size: 60%;
+        width: 400px;
+        height: 200px;
+      }
+      .frame-div2 {
+        margin: 5px 1px 1px 401px;
+        padding: 20px 30px 250px 30px;
+        border: 3px solid #1DFF22;
+        text-align: center;
+        font-size: 60%;
+        width: 400px;
+        height: 200px;
+      }
+
+.square {
+    float:left;
+    position: relative;
+    width: 30%;
+    padding-bottom : 30%; /* = width for a 1:1 aspect ratio */
+    margin:1.66%;
+    background-color:#1E1E1E;
+    overflow:hidden;
+}
+
+.content {
+    position:absolute;
+    height:90%; /* = 100% - 2*5% padding */
+    width:90%; /* = 100% - 2*5% padding */
+    padding: 5%;
+
+}
+.table{
+    display:table;
+    width:100%;
+    height:100%;
+}
+.table-cell{
+    display:table-cell;
+    vertical-align:middle;
+}
+/*  For list */
+ul{
+    text-align:left;
+    margin:5% 0 0;
+    padding:0;
+    list-style-position:inside;
+}
+li{
+    margin: 0 0 0 5%;
+    padding:0;
+}
+
+
+/*  For responsive images */
+
+.content .rs{
+    width:auto;
+    height:auto;
+    max-height:90%;
+    max-width:100%;
+}
+/*  For responsive images as background */
+
+.bg{
+    background-position:center center;
+    background-repeat:no-repeat;
+    background-size:cover; /* you change this to "contain" if you don't want the images to be cropped */
+    color:#fff;
+}
+
+.img1{
+    background-image: url('https://farm3.staticflickr.com/2827/10384422264_d9c7299146.jpg');
+}
+.img2{
+    background-image: url('https://farm7.staticflickr.com/6217/6216951796_e50778255c.jpg');
+}
+.img3{
+    background-image: url('https://farm4.staticflickr.com/3794/13893055574_3df0ab636b.jpg');
+}
+
+/*  following just for the demo */
+
+
+
+p{
+    margin:0;
+    padding:0;
+    text-align:left;
+}
+
+.numbers{
+    font-weight:900;
+    font-size:100px;
+}
+
+#bottom {
+    clear:both;
+    margin:0 1.66%;
+    width:89.68%;
+    padding: 3.5%;
+    background-color:#1E1E1E;
+    color: #fff;
+}
+#bottom p{
+    text-align:center;
+    line-height:2em;
+}
+#bottom a{
+    color: #000;
+    text-decoration:none;
+    border:1px solid #000;
+    padding:10px 20px 12px;
+    line-height:70px;
+    background:#ccc;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#bottom a:hover{
+    background:#ECECEC;
+    border:1px solid #fff;
+}
+    </style>
+  </head>
+  <body>
+  <h1><u>RIABOW.homespace</u></h1>
+    <div class="wrapper">
+      <span class="button" onclick="window.location.href='/cv'">CV</span><br>
+      <span class="button" onclick="window.location.href='/game'">the_game</span><br>
+      <span class="button" onclick="window.location.href='/cat'">my_cat</span><br><br>
+      <span class="button" onclick="window.location.href='/'">go_back</span>
+    </div>
+<div class="frame-div">
+      <!-- 1st row verticaly centered text in the square columns -->
+
+    <div class="square">
+        <div class="content">
+            <div class="table">
+                <div class="table-cell numbers">
+                        {{ cell1 }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="square">
+        <div class="content">
+            <div class="table">
+                <div class="table-cell numbers">
+                        {{ cell2 }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="square">
+        <div class="content">
+            <div class="table">
+                <div class="table-cell numbers">
+                        {{ cell3 }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="square">
+        <div class="content">
+            <div class="table">
+                <div class="table-cell numbers">
+                        {{ cell4 }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="square">
+        <div class="content">
+            <div class="table">
+                <div class="table-cell numbers">
+                        {{ cell5 }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="square">
+        <div class="content">
+            <div class="table">
+                <div class="table-cell numbers">
+                        {{ cell6 }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="square">
+        <div class="content">
+            <div class="table">
+                <div class="table-cell numbers">
+                        {{ cell7 }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="square">
+        <div class="content">
+            <div class="table">
+                <div class="table-cell numbers">
+                        {{ cell8 }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="square">
+        <div class="content">
+            <div class="table">
+                <div class="table-cell numbers">
+                        {{ cell9 }}
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- END OF LAYOUT, following juts for the demo -->
+</div>
+  </div>
+    <div class="frame-div2">
+      <span class="button" onclick="window.location.href='/game/1'"style="text-align: left;">LEFT &#8592;</span><br>
+      <span class="button" onclick="window.location.href='/game/2'">&#8594; RIGHT</span><br>
+      <span class="button" onclick="window.location.href='/game/3'"style="text-align: left;">UP &#8593; </span><br>
+      <span class="button" onclick="window.location.href='/game/4'" >&#8595; DOWN</span><br>
+      <span class="button" onclick="window.location.href='/game/5'" style="text-align: center;">>RESET<</span>
+        <br><br><br><p>the_game&#8482;</p>
+    </div>
+  </body>
+</html>
