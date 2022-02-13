@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from globals import move
-from game.game3x3.Moves import Move
 
 
 def game_action(request, action):
