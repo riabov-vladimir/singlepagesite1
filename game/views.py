@@ -1,19 +1,20 @@
 from django.shortcuts import render
-# from globals import move
 from game.game3x3.Moves import Move
 from game.models import GameState
 from django.core.exceptions import ObjectDoesNotExist
-"""
-Короче действуем так:
 
-При вызове вьюшки смотрим в базе есть ли модель GameState с полем session_key равным 
-собственно ключу конкретной сессии под которой пользователь эту вьюшку вызвал.
-1) Если есть, то пользуемся значениями из данной модельки.
-2) Если нет, то создаем новый экземпляр и работаем с ним. Таким образом дальнейший ход игры будет всегда обращаться
-к пунтку 1.
-"""
 
-def game_action(request, action):
+def game_action(request, action: int):
+
+	"""
+	Возвращает страницу игры с измененным относительно предыдущего хода состоянием.
+	Принимает на вход параметр :action: int определяющий следующий ход.
+	1 = лево
+	2 = право
+	3 = вверх
+	4 = низ
+	5 = начать игру заново
+	"""
 
 	if not request.session.session_key:
 		request.session.create()
@@ -84,8 +85,7 @@ def game_action(request, action):
 
 def game_index(request):
 	"""
-	obj, created = Person.objects.get_or_create(first_name='John', last_name='Lennon',
-	                  defaults={'birthday': date(1940, 10, 9)})
+	Стартовая страница игры (без идентификатора действия передаваемого в url)
 	"""
 
 	if not request.session.session_key:
