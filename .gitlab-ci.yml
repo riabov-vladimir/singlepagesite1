@@ -1,0 +1,8 @@
+stages:
+  - deploy
+
+runserver:
+  stage: deploy
+  script:
+    - echo "run server"
+    - gunicorn --bind 127.0.0.1:8000 singlepagesite1.wsgi

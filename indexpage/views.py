@@ -1,15 +1,30 @@
 import datetime
-from django.shortcuts import render
+from django.views.generic.base import TemplateView
 
 
-def index_page(request):
+class CatView(TemplateView):
+	template_name = 'indexpage/cat.html'
+
+	def get_context_data(self):
+		context = {'is_index': False}
+		return context
+
+
+class IndexView(TemplateView):
+	template_name = 'indexpage/index.html'
 	now = str(datetime.datetime.now())
-	return render(request, 'indexpage/index.html', context={'now': now})
+
+	def get_context_data(self):
+		context = {
+			'is_index': True,
+			'now': self.now
+		}
+		return context
 
 
-def cv_page(request):
-	return render(request, 'indexpage/cv.html')
+class CvView(TemplateView):
+	template_name = 'indexpage/cv.html'
 
-
-def cat_page(request):
-	return render(request, 'indexpage/cat.html')
+	def get_context_data(self):
+		context = {'is_index': False}
+		return context

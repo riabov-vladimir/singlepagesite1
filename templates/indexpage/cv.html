@@ -1,84 +1,7 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-    <title>RIABOW.com</title>
-    <style>
-      body {
-        background: #000;
-        color: #1DFF22;
-        font-family: 'VT323', monospace;
-        font-size: 36px;
-      }
-      h1 {
-        padding: 1px 1px 1px 1px;
-        text-align: right;
-      }
-      .wrapper {
-        margin: 90px auto;
-        text-align: left;
-<!--        align-items: left;-->
-        width: 100%;
-        position: relative;
-      }
-      .button {
-        padding: 5px 10px 1px 5px;
-        margin: 10px 1px 2px 2px;
-<!--        color: #1DFF22;-->
-        text-transform: uppercase;
-        text-align: right;
-        position: relative;
-        width: 200px;
-        height: 50px;
-        text-decoration: none;
-        display: inline-block;
-        border: 3px solid;
-      }
-      .button::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: block;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        -webkit-transform: scaleY(.1);
-        transform: scaleY(.1);
-        transition: all .4s
-      }
-      .button:hover {
-        color: #000;
-      }
-      .button:hover::before {
-        opacity: 1;
-        background-color: #1DFF22;
-        -webkit-transform: scaleY(1);
-        transform: scaleY(1);
-        transition: -webkit-transform .6s cubic-bezier(.08, .35, .13, 1.02), opacity .4s;
-        transition: transform .6s cubic-bezier(.08, .35, .13, 1.02), opacity
-      }
-      .frame-div {
-        margin: -335px 1px 1px 401px;
-        padding: 20px 280px 200px 50px;
-        border: 3px dashed #1DFF22;
-        text-align: center;
-        font-size: 60%;
-        width: 400px;
-        height: 200px;
-      }
-    </style>
-  </head>
-  <body>
-  <h1><u>RIABOW.homespace</u></h1>
-    <div class="wrapper">
-      <span class="button" onclick="window.location.href='/cv'">CV</span><br>
-      <span class="button" onclick="window.location.href='/game'">the_game</span><br>
-      <span class="button" onclick="window.location.href='/cat'">my_cat</span><br><br>
-      <span class="button" onclick="window.location.href='/'">go_back</span>
-    </div>  <div class="frame-div">
+{% extends "base.html" %}
+
+{% block content %}
+<div class="frame-div-cv">
   <p><pre>
               .-.
    heehee      /aa \_
@@ -93,7 +16,62 @@
     '-'                        /     \
                              _/       \    teehee
                             (   __.-._/
+  
+
+До 32 лет работал инженером по сценическому освещению в сфере шоу-бизнеса, после 
+чего твердо решил сменить профессию и следовать за мечтой стать частью IT-сообщества. 
+Закончил курсы backend-разработки на Python\Django, заинтересовался системным анализом 
+и выбрал это направление для построения карьеры.
+
+По долгу службы довольно глубоко интегрирован в отдел разработки, больше всего в профессии 
+нравится помогать программистам проектировать и реализовывать системы (почти всегда это 
+стэк C#, React, MSSQL\PostgreSQL).
+
+Принимал участие в полном цикле разработки ПО:
+- Сбор требований у заказчиков
+- Формализация требований собранных бизнес-аналитиком
+- Проектирование
+- Написание ТЗ
+- Декомпозиция ТЗ на задачи для разработки
+- Сопровождение разработки
+- Приемочное тестирование
+- Подготовка и сопровождение ПСИ
+- Обновление эксплуатационной документации и спецификаций
+- Техподдержка (анализ, постановка задач по инцидентам, написание SQL-скриптов, выгрузки из БД)
+
+Участвовал в интегрировании систем по протоколам HTTP (REST API), DB-LINK, SOAP.
+
+Имею опыт работы с Apache KAFKA.
+
+Артефакты:
+- Аналитические записки
+- ТЗ/ЧТЗ
+- ПМИ
+- Спецификации (интеграционные, как правило)
+- Эксплуатационная документация
+- Постановки задач на разработку
+
+Уверенно владею Python, Django, SQL (PostgreSQL, MSSQL, SQLite3).
+
+Имею опыт работы со следующими инструментами:
+- таск-трекеры: Jira, YouTrack, TFS
+- базы знаний: Confluence, XWiki
+- инструменты для работы с API: SoapUI, Postman, SWAGGER
+- СУБД: MSSQL, PostreSQL, SQLite3, MongoDB
+- IDE: Visual Studio, VSCode, PyCharm, Atom
+- графические конструкторы: MS Visio, draw.io
+
+Также имею опыт работы с Sparx Enterprise Architect: проектирование БД, документирование, построение 
+диаграмм, интеграция с СУБД по ODBC, экспорт скриптов создания БД.
+
+В свободное время люблю повозиться в консоли Linux-сервера, можно посмотреть результаты тут - http://riabow.com/
+Репозиторий сайта - https://github.com/riabov-vladimir/singlepagesite1
+
+Хотел бы работать в продуктовой компании над крупным долгоиграющим проектом. Комфортнее всего себя 
+чувствую работая продолжительно над одним проектом, хорошо зная продукт и неся за него ответственность.
+
+С наилучшими пожеланиями,
+  Wolodia
   </pre></p>
 </div>
-  </body>
-</html>
+{% endblock %}
