@@ -4,20 +4,20 @@
 
 <html>
   <head>
-<!--  favicon  -->
-<!--    <link rel="apple-touch-icon" sizes="180x180" href="{% static '/favicon/apple-touch-icon.png' %}">-->
-<!--    <link rel="icon" type="image/png" sizes="32x32" href="{% static '/favicon/favicon-32x32.png' %}">-->
-<!--    <link rel="icon" type="image/png" sizes="16x16" href="{% static '/favicon/favicon-16x16.png' %}">-->
-<!--    <link rel="manifest" href="{% static '/favicon/site.webmanifest' %}">-->
-<!--    <link rel="mask-icon" href="{% static '/favicon/safari-pinned-tab.svg' %}" color="#5bbad5">-->
-<!--    <meta name="msapplication-TileColor" content="#da532c">-->
-<!--    <meta name="theme-color" content="#ffffff">-->
-<!--  favicon  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <title>RIABOW.com</title>
     <style>
+
+      @font-face {
+        font-family: "pixel-caps";
+        src: url("{% static 'fonts/pixel.ttf' %}");
+      }
+      @font-face {
+        font-family: "pixel";
+        src: url("{% static 'fonts/pixel.ttf' %}");
+      }
       body {
         background: #000;
         color: #1DFF22;
@@ -83,13 +83,19 @@
       }
 
       .frame-div-cv {
+<!--        margin: -335px 1px 1px 401px;-->
+<!--        padding: 20px 50px 200px 50px;-->
+        width: 800px;
         margin: -335px 1px 1px 401px;
-        padding: 20px 280px 200px 50px;
+        padding: 25px 20px;
         border: 3px dashed #1DFF22;
-        text-align: center;
-        font-size: 60%;
-        width: 400px;
-        height: 200px;
+        text-align: left;
+        color: #1cd81c;
+        letter-spacing: 3px;
+        font-family: "pixel";
+        font-size: 13px;
+<!--        width: 600px;-->
+<!--        height: 2000px;-->
       }
       .frame-div-cat {
         margin: -430px 1px 1px 250px;
@@ -97,7 +103,7 @@
         border: 3px dashed #1DFF22;
         text-align: center;
         font-size: 60%;
-        width: 600px;
+        width: 700px;
         height: 800px;
       }
     </style>
