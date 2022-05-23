@@ -1,3 +1,7 @@
 from django.contrib import admin
+from .models import CvText
 
-# Register your models here.
+
+@admin.register(CvText)
+class CvTextAdmin(admin.ModelAdmin):
+    pass
