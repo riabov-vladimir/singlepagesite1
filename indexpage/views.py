@@ -1,5 +1,6 @@
 import datetime
 from django.views.generic.base import TemplateView
+from indexpage.models import CvText
 
 
 class CatView(TemplateView):
@@ -33,5 +34,7 @@ class CvView(TemplateView):
 
     def get_context_data(self):
         context = {'is_index': False,
-                   'age': self.get_age()}
+                   'age': self.get_age(),
+                   'cv': CvText.objects.latest('last_modified')
+                   }
         return context
